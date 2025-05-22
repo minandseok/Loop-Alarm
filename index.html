@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Loop Alarm</title>
+    <link
+      rel="stylesheet"
+      href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Loop Alarm</h1>
+
+      <div class="settings-container">
+        <div class="settings-row">
+          <div class="time-setting">
+            <div class="setting-header">
+              <h3>시간 간격</h3>
+            </div>
+            <div class="time-inputs">
+              <div class="time-input-group">
+                <label for="intervalHours">시간</label>
+                <input
+                  type="number"
+                  id="intervalHours"
+                  min="0"
+                  max="24"
+                  value="2"
+                  step="1" />
+              </div>
+              <div class="time-input-group">
+                <label for="intervalMinutes">분</label>
+                <input
+                  type="number"
+                  id="intervalMinutes"
+                  min="0"
+                  max="59"
+                  value="0"
+                  step="1" />
+              </div>
+            </div>
+          </div>
+
+          <div class="time-setting">
+            <div class="setting-header">
+              <h3>휴식 시간</h3>
+            </div>
+            <div class="time-inputs">
+              <div
+                class="time-input-group"
+                style="width: 60%">
+                <label for="breakMinutes">분</label>
+                <input
+                  type="number"
+                  id="breakMinutes"
+                  min="1"
+                  max="60"
+                  value="10"
+                  step="1" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alarm-status">
+        <p id="startTime">시작 시간: --:--</p>
+        <p id="nextAlarm">다음 알람: --:--</p>
+        <p id="alarmCount">알람 횟수: 0</p>
+      </div>
+      <button
+        id="startButton"
+        class="start-button">
+        알람 시작
+      </button>
+      <button
+        id="stopButton"
+        class="stop-button"
+        disabled>
+        알람 중지
+      </button>
+    </div>
+
+    <div class="sound-container">
+      <h2>알람 소리 설정</h2>
+      <div class="sound-setting">
+        <div class="sound-input-group">
+          <label for="startAlarmFile">시작 알람:</label>
+          <input
+            type="file"
+            id="startAlarmFile"
+            accept="audio/mp3,audio/wav" />
+          <button
+            id="testStartAlarm"
+            class="test-button">
+            테스트
+          </button>
+        </div>
+        <div class="sound-input-group duration-group">
+          <label for="startAlarmDuration">재생 시간:</label>
+          <input
+            type="number"
+            id="startAlarmDuration"
+            min="1"
+            max="30"
+            value="4"
+            step="1" />
+          <span class="unit">초</span>
+        </div>
+
+        <div class="sound-input-group">
+          <label for="endAlarmFile">종료 알람:</label>
+          <input
+            type="file"
+            id="endAlarmFile"
+            accept="audio/mp3,audio/wav" />
+          <button
+            id="testEndAlarm"
+            class="test-button">
+            테스트
+          </button>
+        </div>
+        <div class="sound-input-group duration-group">
+          <label for="endAlarmDuration">재생 시간:</label>
+          <input
+            type="number"
+            id="endAlarmDuration"
+            min="1"
+            max="30"
+            value="7"
+            step="1" />
+          <span class="unit">초</span>
+        </div>
+      </div>
+    </div>
+
+    <audio
+      id="alarm1"
+      src="1.mp3"></audio>
+    <audio
+      id="alarm2"
+      src="2.mp3"></audio>
+    <script src="app.js"></script>
+  </body>
+</html>
