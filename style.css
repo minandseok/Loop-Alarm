@@ -9,10 +9,10 @@ body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem;
   gap: 1.5rem;
 }
 
@@ -22,8 +22,10 @@ body {
   border-radius: 1rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 90%;
-  max-width: 400px;
+  width: 45%;
+  min-width: 350px;
+  max-width: 450px;
+  height: fit-content;
 }
 
 .sound-container {
@@ -31,8 +33,25 @@ body {
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 400px;
+  width: 45%;
+  min-width: 350px;
+  max-width: 450px;
+  height: fit-content;
+}
+
+/* 모바일 화면에서는 세로 배치로 변경 */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .container,
+  .sound-container {
+    width: 90%;
+    min-width: unset;
+    max-width: 400px;
+  }
 }
 
 h1 {
